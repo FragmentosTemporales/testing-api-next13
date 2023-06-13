@@ -2,6 +2,7 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { ContextProvider } from "@/context/Context";
 
 export const metadata = {
   title: "Testing API",
@@ -17,12 +18,14 @@ export default function RootLayout({ children }) {
           href="https://bootswatch.com/5/darkly/bootstrap.min.css"
         />
       </head>
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
+      <body 
+      style={{ background: "#cccccc" }}>
+        <ContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ContextProvider>
       </body>
-      
     </html>
   );
 }

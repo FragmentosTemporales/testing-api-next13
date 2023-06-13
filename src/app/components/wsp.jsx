@@ -1,7 +1,7 @@
 const Whatsapp = () => {
     return (
       <div
-        className="wsp"
+        className="shadow"
         style={{
           position: "fixed",
           width: "55px",

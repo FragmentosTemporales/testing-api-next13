@@ -1,5 +1,4 @@
-export async function GET(request) {
-  const products = [
+const products = [
     {
       id: 1,
       name: "Intercomunicador v6",
@@ -21,15 +20,26 @@ export async function GET(request) {
       description: "Intercomunicador muy shidory",
       avatar: "https://i.postimg.cc/yNHGg96H/1000009732-d4abbc2549567c4aad980ce40e98aabb-20-2-2023-22-54-34.jpg",
     },
+    {
+        id: 4,
+        name: "Auricular V6",
+        precio: "10.000",
+        description: "Auricular muy shidory",
+        avatar: "https://i.postimg.cc/j2L304cz/1000011620-1102fedec24086004b33a227df3d57e2-9-3-2023-17-38-16.jpg",
+      },
   ];
-
-  // Convertir el objeto JavaScript en una cadena JSON
-  const jsonProduct = JSON.stringify(products);
-
-  // Crear una nueva respuesta con la cadena JSON como cuerpo
-  return new Response(jsonProduct, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-}
+  export const GET = async () => {
+    const jsonProduct = products.map(product => ({
+      id: product.id,
+      name: product.name,
+      precio: product.precio,
+      description: product.description,
+      avatar: product.avatar,
+    }));
+  
+    return new Response(JSON.stringify(jsonProduct), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
