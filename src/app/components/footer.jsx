@@ -3,26 +3,44 @@ import MapView from "./map/MapView";
 
 const Footer = () => {
   return (
-    <nav
-      className="navbar navbar-expand-lg "
-      style={{background: "#a6a6a6"}}
-    >
-      <div className="container flex-column p-4">
-        <div className="row  col-12">
-        <div className="p-4 col-12 col-md-6 ">
-            <h4 className="text-white">¿Dónde encontrarnos?</h4>
-            <div className="">
-              <MapView />
+    <nav className="navbar navbar-expand-lg " style={{ background: "#a6a6a6" }}>
+      <div className="container d-flex align-items-start">
+        <div className="p-4 col-12 col-md-6">
+          <h4 className="text-white">Contáctanos</h4>
+          <div className="">
+            <div className="col-lg-3 col-3 d-flex">
+              <a href="https://www.instagram.com/erre_import/" target="blank">
+                <i className="text-white bi bi-instagram"></i>
+              </a>
+            </div>
+            <div className="col-lg-3 col-3 d-flex">
+              <a
+                href="https://www.facebook.com/fragmentos.temporales"
+                target="blank"
+              >
+                <i className="text-white bi bi-facebook"></i>
+              </a>
+            </div>
+            <div className="col-lg-3 col-3 d-flex">
+              <a href="https://github.com/FragmentosTemporales" target="blank">
+                <i class="text-white bi bi-github" />
+              </a>
+            </div>
+            <div className="col-lg-3 col-3 d-flex">
+              <a href="https://www.tiktok.com/@erre_import" target="blank">
+                <i class="text-white bi bi-tiktok" />
+              </a>
             </div>
           </div>
-          <div className="p-4 col-12 col-md-12  text-center">
-            <p className="text-white">
-              Erre Import. - San Miguel 851 - Tel. 56 9 56172015
-            </p>
+        </div>
+        <div className="p-4 col-12 col-md-6 ">
+          <h4 className="text-white">¿Dónde encontrarnos?</h4>
+          <div className="">
+            <MapView />
           </div>
         </div>
       </div>
-      <Whatsapp/>
+      <Whatsapp />
     </nav>
   );
 };

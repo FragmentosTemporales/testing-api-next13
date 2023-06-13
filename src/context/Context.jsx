@@ -19,7 +19,7 @@ export const ContextProvider = ({children}) => {
   }, []);
 
   async function fetchProducts() {
-    const res = await fetch("/api/products", {
+    const res = await fetch("/api/product", {
       cache: 'no-store'
     });
     const data = await res.json();

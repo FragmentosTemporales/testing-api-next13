@@ -13,6 +13,7 @@ function Cards() {
           avatar={product.avatar}
           name= {product.name}
           precio= {product.precio}
+          id={product.id}
           />
         ))}</div>
       </div>
