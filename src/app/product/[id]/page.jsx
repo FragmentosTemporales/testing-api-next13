@@ -1,4 +1,5 @@
 'use client'
+import Carousel from "@/app/components/carousel";
 import { useState, useEffect } from "react";
 
 function Product({ params }) {
@@ -15,8 +16,23 @@ function Product({ params }) {
     setProduct(data);
     console.log(data)
   }
+
+  
   return (
-    <div>page product {product.name}</div>
+    <div style={{minHeight:"100vh"}}>
+      <h1 className="text-center">page product {product.name}</h1>
+      <section className="container bg-dark">
+        <div className="card">
+          <div className="img-container">
+            <Carousel
+            first={product.first}
+            second={product.second}
+            third={product.third}
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 

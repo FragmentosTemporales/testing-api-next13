@@ -6,7 +6,7 @@ function Cards() {
     const {products} = useStore()
   return (
     <div className='container d-flex py-5 my-5'>
-        <div className='row d-flex justify-content-between'>
+        <div className='row d-flex justify-content-around'>
           {products.map((product, id) => (
           <Card 
           key={product.id}
