@@ -3,6 +3,7 @@ import Carousel from "@/app/components/carousel";
 import { useState, useEffect, useContext } from "react";
 import { Context } from "@/context/Context";
 
+
 function Product({ params }) {
   const {  getProduct } = useContext(Context);
   const [product, setProduct] = useState([]);
@@ -14,7 +15,7 @@ function Product({ params }) {
   }, []);
 
   function fetchProduct() {
-    fetch(`/api/product/${params.id}`, { cache: "no-store" })
+    fetch(`/api/product/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -29,7 +30,9 @@ function Product({ params }) {
     <div 
     className="container-fluid border"
     style={{ minHeight: "100vh" }}>
-      <section className="container my-4 bg-warning col-md-12 col-12">
+      <section 
+      style={{borderRadius: "10px"}}
+      className="container my-4 bg-warning col-md-12 col-12">
         <div className="row shadow-lg">
           <div className="col-md-6 col-12 ">
             <Carousel
