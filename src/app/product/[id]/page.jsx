@@ -1,30 +1,18 @@
 "use client";
 import Carousel from "@/app/components/carousel";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Context } from "@/context/Context";
 
 
 function Product({ params }) {
-  const {  getProduct } = useContext(Context);
-  const [product, setProduct] = useState([]);
-  useEffect(() => {
-    fetchProduct();
-  }, []);
+  const {  getProduct, product } = useContext(Context);
+
+
   useEffect(() => {
     getProduct(params.id);
   }, []);
 
-  function fetchProduct() {
-    fetch(`/api/product/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching product:', error);
-      });
-  }
+ 
 
   return (
     <div 

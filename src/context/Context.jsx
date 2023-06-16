@@ -13,6 +13,7 @@ export const useStore = () => {
 export const ContextProvider = ({children}) => {
 
   const [products, setProducts] = useState([])
+  const [product, setProduct] = useState([])
   
   useEffect(() => {
     fetchProducts();
@@ -23,7 +24,6 @@ export const ContextProvider = ({children}) => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-        console.log(data)
       })
       .catch((error) => {
         console.error('Error fetching products:', error);
@@ -31,9 +31,10 @@ export const ContextProvider = ({children}) => {
   }
 
   function getProduct(id) {
-    const product = products.find(product => product.id === id);
-    console.log(products)
+    const productId = parseInt(id);
+    const product = products.find(product => product.id === productId);
     if (product) {
+      setProduct(product); // Actualizar el estado "product" con el producto encontrado
       console.log(product);
     } else {
       console.log(`No se encontró ningún producto con el ID ${id}`);
@@ -41,8 +42,9 @@ export const ContextProvider = ({children}) => {
   }
   
   
+  
  
-  return <Context.Provider value={{products, getProduct}}>
+  return <Context.Provider value={{products, getProduct, product}}>
     {children}
     </Context.Provider>;
 };

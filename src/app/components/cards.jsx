@@ -9,10 +9,11 @@ function Cards() {
         <div className='row d-flex justify-content-around'>
           {products.map((product, id) => (
           <Card 
+          brand={product.brand}
           key={product.id}
-          avatar={product.avatar}
+          first={product.first}
           name= {product.name}
-          precio= {product.precio}
+          price= {product.price}
           id={product.id}
           />
         ))}</div>
