@@ -3,17 +3,19 @@
 import React, { useRef, useEffect } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-icon.png";
+import MarkerIcon from '../../../../node_modules/leaflet/dist/images/marker-icon.png' 
+import MarkerShadow from '../../../../node_modules/leaflet/dist/images/marker-shadow.png'
 import L from "leaflet";
+import "./map.modules.css"
 
 let iconUbication = new L.icon({
-  iconUrl: icon,
-  iconShadow: iconShadow,
-  iconSize: [40, 60],
-  iconAnchor: [22, 94],
-  shadowAnchor: [22, 94],
+  iconUrl: MarkerIcon.src,
+  iconRetinaUrl: MarkerIcon.src,
+  iconSize: [25, 41],
+  iconAnchor: [12.5, 41],
   popupAnchor: [-3, -76],
+  shadowUrl: MarkerShadow.src,
+  shadowSize: [41, 41]
 });
 
 const MapView = () => {

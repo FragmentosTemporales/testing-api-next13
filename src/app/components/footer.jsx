@@ -1,7 +1,8 @@
+import dynamic from "next/dynamic"
 import Whatsapp from "./wsp";
-import MapView from "./map/MapView";
 
 const Footer = () => {
+  const Map = dynamic(() => import('./map/MapView'), { ssr:false })
   return (
     <nav className="navbar navbar-expand-lg " style={{ background: "#a6a6a6" }}>
       <div className="container d-flex align-items-start">
@@ -36,7 +37,7 @@ const Footer = () => {
         <div className="p-4 col-12 col-md-6 ">
           <h4 className="text-white">¿Dónde encontrarnos?</h4>
           <div className="">
-            <MapView />
+            <Map />
           </div>
         </div>
       </div>
