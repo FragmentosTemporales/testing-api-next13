@@ -28,23 +28,14 @@ function Navbar() {
       </div>
       <div className="col col-4 d-flex justify-content-end p-4">
         <div className="d-flex align-items-center">
-          <div className="dropdown">
+          <Link href="/cart" >
             <button
-              className="btn btn-success dropdown-toggle"
+              className="btn btn-success"
               type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
             >
               <i class="text-white bi bi-cart"></i>
             </button>
-            <ul className="dropdown-menu">
-              <li>
-                <p className="dropdown-item">
-                  Action
-                </p>
-              </li>
-            </ul>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
