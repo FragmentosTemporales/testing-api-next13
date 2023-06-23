@@ -1,7 +1,12 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 function Navbar() {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   return (
     <div
       className="d-flex justify-content-center shadow sticky-top"
@@ -28,14 +33,33 @@ function Navbar() {
       </div>
       <div className="col col-4 d-flex justify-content-end p-4">
         <div className="d-flex align-items-center">
-          <Link href="/cart" >
+          <div class="dropdown">
             <button
-              className="btn btn-success"
+              className="btn btn-secondary dropdown-toggle"
               type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
-              <i class="text-white bi bi-cart"></i>
+              Dropdown button
             </button>
-          </Link>
+            <ul className="dropdown-menu">
+              <li>
+                <a className="dropdown-item" href="#">
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Another action
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Something else here
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { ContextProvider } from "@/context/Context";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export const metadata = {
   title: "ShopStore",
@@ -12,12 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-        />
-      </head>
       <body 
       style={{ background: "#cccccc" }}>
         <ContextProvider>
