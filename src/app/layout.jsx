@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body 
-      style={{ background: "#cccccc" }}>
+      style={{ background: "#d9d9d9" }}>
         <ContextProvider>
           <Navbar />
           {children}

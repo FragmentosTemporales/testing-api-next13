@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -12,14 +12,54 @@ function Navbar() {
       className="d-flex justify-content-center shadow sticky-top"
       style={{ background: "#a6a6a6" }}
     >
-      <div className="col col-4 d-flex justify-content-start p-4">
+      <div className="col col-6 d-flex justify-content-start p-4">
         <div className="d-flex align-items-center">
-          <Link href="/about">
-            <h5 className="text-white">ABOUT</h5>
-          </Link>
+          <div class="dropdown">
+            <button
+              style={{ background: "#2b3651", color: "white" }}
+              className="btn btn-secondary rounded-0 border-0 shadow-sm dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              MENU
+            </button>
+            <ul
+              style={{ borderRadius: "0", minWidth: "300px" }}
+              className="dropdown-menu"
+            >
+              <li>
+                <Link
+                  className="dropdown-item"
+                  style={{ textDecoration: "none" }}
+                  href="/"
+                >
+                  <h6>INICIO</h6>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="dropdown-item"
+                  style={{ textDecoration: "none" }}
+                  href="/store"
+                >
+                  <h6>TIENDA</h6>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="dropdown-item"
+                  style={{ textDecoration: "none" }}
+                  href="/about"
+                >
+                  <h6>INFORMACION</h6>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="col col-4 d-flex justify-content-center">
+      <div className="col col-6 d-flex justify-content-end p-4">
         <Link href="/">
           <Image
             priority
@@ -30,37 +70,6 @@ function Navbar() {
             alt="Logo"
           />
         </Link>
-      </div>
-      <div className="col col-4 d-flex justify-content-end p-4">
-        <div className="d-flex align-items-center">
-          <div class="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown button
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -2,7 +2,8 @@ import Cards from "./components/cards";
 
 function Page() {
   return (
-    <div className="container">
+    <div 
+    className="container">
       <div className="row ">
         <div className="col-lg-3 text-dark d-flex align-items-center justify-content-center add shadow">
           <img
